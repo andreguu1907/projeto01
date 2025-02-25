@@ -2,8 +2,9 @@ const express = require('express');
 //importa o mongodb em MongoCLient
 const { MongoClient, ObjectId } = require('mongodb');
 // configura a url do banco
-const url="mongodb://127.0.0.1:27017";
-// nome do banco de dados
+//const url="mongodb://127.0.0.1:27017";
+const url="mongodb+srv://andreguu1907:r7P7rawyDj0GJLwy@cluster0.jbmvn.mongodb.net"                                                      
+// 
 const dbName = "backend-abril-24";
 // cria um cliente com a url criada
 const client = new MongoClient(url);
@@ -95,7 +96,7 @@ async function main(){
     res.send("Item Removido com Sucesso");
   })
 
-  app.listen(3000);
+  app.listen(process.env.PORT||3000);
 
 }
 
